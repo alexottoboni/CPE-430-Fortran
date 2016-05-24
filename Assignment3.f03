@@ -1,35 +1,15 @@
 program Assignment3
 
-use exprcmodule
+use moreexprcs
 
-type, EXTENDS ( ExprC ) :: Binop
-   character(1) :: Op
-   integer :: Left
-   integer :: Right
-end type Binop
+!print *,"parse(['+', '3', '4'])",
 
-type, EXTENDS ( ExprC ) :: IdC
-   character(20) :: id
-end type IdC
+CONTAINS
+TYPE(ExprC) function parse(sexp)
+   TYPE(Idc) ::id
+   id%id = 'a'
+   parse=id
+end function parse
 
-type, EXTENDS ( ExprC ) :: BoolC
-   logical :: val
-end type
-
-type, EXTENDS ( ExprC ) :: AppC
-   CLASS(exprc), pointer :: fun
-   CLASS(exprc), pointer :: args
-end type AppC
-
-type, EXTENDS ( ExprC ) :: LamC
-   CLASS(exprc), pointer :: params
-   CLASS(exprc), pointer :: body
-end type LamC
-
-type, EXTENDS ( ExprC ) :: IfC
-   CLASS(exprc), pointer :: test
-   CLASS(exprc), pointer :: then
-   CLASS(exprc), pointer :: else
-end type IfC
 
 end program Assignment3
