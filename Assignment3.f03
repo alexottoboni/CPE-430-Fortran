@@ -13,7 +13,7 @@ type, EXTENDS ( ExprC ) :: IdC
 end type IdC
 
 type, EXTENDS ( ExprC ) :: BoolC
-   integer :: val
+   logical :: val
 end type
 
 type, EXTENDS ( ExprC ) :: AppC
