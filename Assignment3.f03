@@ -16,4 +16,20 @@ type, EXTENDS ( ExprC ) :: BoolC
    integer :: val
 end type
 
+type, EXTENDS ( ExprC ) :: AppC
+   CLASS(exprc), pointer :: fun
+   CLASS(exprc), pointer :: args
+end type AppC
+
+type, EXTENDS ( ExprC ) :: LamC
+   CLASS(exprc), pointer :: params
+   CLASS(exprc), pointer :: body
+end type LamC
+
+type, EXTENDS ( ExprC ) :: IfC
+   CLASS(exprc), pointer :: test
+   CLASS(exprc), pointer :: then
+   CLASS(exprc), pointer :: else
+end type IfC
+
 end program Assignment3
