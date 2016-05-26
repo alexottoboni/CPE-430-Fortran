@@ -2,9 +2,13 @@ module moreexprcs
 use exprcmodule
 type, EXTENDS ( ExprC ) :: Binop
    character(1) :: Op
-   integer :: Left
-   integer :: Right
+   CLASS(exprc), pointer :: Left
+   CLASS(exprc), pointer :: Right
 end type Binop
+
+type, EXTENDS ( ExprC ) :: IntC
+   integer :: int
+end type IntC
 
 type, EXTENDS ( ExprC ) :: IdC
    character(20) :: id
